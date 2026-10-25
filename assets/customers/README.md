@@ -4,7 +4,6 @@ Upload each logo here as a PNG with exactly this file name. The website shows th
 
 | Customer | File name |
 |---|---|
-| Ministry of Education | ministry-of-education.png |
 | Sultan Qaboos University | sultan-qaboos-university.png |
 | University of Technology & Applied Sciences | utas.png |
 | University of Nizwa | university-of-nizwa.png |
