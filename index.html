@@ -192,6 +192,19 @@ html[dir="rtl"] .dl .cover{transform:rotate(2deg)}
 .dl .meta b{color:var(--ink);font-weight:600}
 .dl .actions .btn.outline{border-color:var(--line);color:var(--ink);background:transparent}
 @media (max-width:760px){.dl{grid-template-columns:1fr;padding:24px;gap:28px}.dl .cover{width:200px}}
+
+section[id]{scroll-margin-top:76px}
+/* Customers */
+#customers{border-bottom:1px solid var(--line)}
+.cust{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+@media (max-width:900px){.cust{grid-template-columns:1fr}}
+.cgroup{min-width:0}
+.cgroup h3{font-size:.95rem;font-weight:600;color:var(--muted);padding-bottom:10px;border-bottom:1px solid var(--line);margin-bottom:12px}
+.cgroup ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.cgroup li{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;min-width:0}
+.mono{flex:none;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--wave-soft);color:var(--wave);font-family:var(--f-mono);font-weight:500;font-size:.78rem;letter-spacing:.02em;direction:ltr}
+.cname{font-family:var(--f-display);font-weight:600;font-size:1rem;line-height:1.3;overflow-wrap:anywhere}
+.cnote{margin-top:22px;color:var(--muted);font-size:.92rem}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -208,6 +221,7 @@ html[dir="rtl"] .dl .cover{transform:rotate(2deg)}
       <li><a href="#brands" data-ar="العلامات التجارية">Brands</a></li>
       <li><a href="#catalogue" data-ar="الكتالوج">Catalogue</a></li>
       <li><a href="#sectors" data-ar="القطاعات">Sectors</a></li>
+      <li><a href="#customers" data-ar="عملاؤنا">Customers</a></li>
       <li><a href="#contact" data-ar="اتصل بنا">Contact</a></li>
     </ul>
     <button class="lang" id="langBtn" type="button" aria-label="Switch language">العربية</button>
@@ -457,6 +471,48 @@ html[dir="rtl"] .dl .cover{transform:rotate(2deg)}
         <div class="sec"><h3 data-ar="البحث العلمي والتعليم">Research &amp; education</h3><p data-ar="مختبرات تعليمية وبحثية مجهزة للكيمياء والأحياء والهندسة.">Teaching and research labs equipped for chemistry, biology and engineering.</p><div class="who" data-ar="الجامعات · الكليات · المدارس">Universities · colleges · schools</div></div>
         <div class="sec"><h3 data-ar="المختبرات الحكومية">Government laboratories</h3><p data-ar="مختبرات سلامة الغذاء والزراعة والبيئة والصحة العامة المرجعية.">Food safety, agriculture, environment and public health reference labs.</p><div class="who" data-ar="الوزارات · البلديات · المراكز">Ministries · municipalities · centres</div></div>
       </div>
+    </div>
+  </section>
+
+  <section class="block" id="customers">
+    <div class="wrap">
+      <div class="head">
+        <div><div class="eyebrow" data-ar="عملاؤنا">Our customers</div><h2 data-ar="موثوقون لدى جامعات عُمان وصناعاتها ومختبراتها.">Trusted by Oman's universities, industry and laboratories.</h2></div>
+        <p data-ar="نفخر بتوريد الأجهزة والمستلزمات المختبرية لهذه الجهات وغيرها في جميع أنحاء السلطنة.">We are proud to supply laboratory instruments and consumables to these organisations and many more across the Sultanate.</p>
+      </div>
+      <div class="cust">
+        <div class="cgroup">
+          <h3 data-ar="التعليم والجهات الحكومية">Education & government</h3>
+          <ul>
+            <li><span class="mono" aria-hidden="true">MoE</span><span class="cname" data-ar="وزارة التربية والتعليم">Ministry of Education</span></li>
+            <li><span class="mono" aria-hidden="true">SQU</span><span class="cname" data-ar="جامعة السلطان قابوس">Sultan Qaboos University</span></li>
+            <li><span class="mono" aria-hidden="true">UTAS</span><span class="cname" data-ar="جامعة التقنية والعلوم التطبيقية">University of Technology & Applied Sciences</span></li>
+            <li><span class="mono" aria-hidden="true">UoN</span><span class="cname" data-ar="جامعة نزوى">University of Nizwa</span></li>
+            <li><span class="mono" aria-hidden="true">NU</span><span class="cname" data-ar="الجامعة الوطنية">National University</span></li>
+            <li><span class="mono" aria-hidden="true">ASU</span><span class="cname" data-ar="جامعة الشرقية">A'Sharqiyah University</span></li>
+            <li><span class="mono" aria-hidden="true">SU</span><span class="cname" data-ar="جامعة صحار">Sohar University</span></li>
+          </ul>
+        </div>
+        <div class="cgroup">
+          <h3 data-ar="الصناعة والتصنيع">Industry & manufacturing</h3>
+          <ul>
+            <li><span class="mono" aria-hidden="true">JS</span><span class="cname" data-ar="جندال للصلب">Jindal Steel</span></li>
+            <li><span class="mono" aria-hidden="true">JZ</span><span class="cname" data-ar="الجزيرة للصلب">Jazeera Steel</span></li>
+            <li><span class="mono" aria-hidden="true">OC</span><span class="cname" data-ar="أسمنت عُمان">Oman Cement</span></li>
+            <li><span class="mono" aria-hidden="true">NP</span><span class="cname" data-ar="الدهانات الوطنية">National Paints</span></li>
+            <li><span class="mono" aria-hidden="true">ND</span><span class="cname" data-ar="الوطنية للمنظفات">National Detergent</span></li>
+            <li><span class="mono" aria-hidden="true">OP</span><span class="cname" data-ar="عُمان للأدوية">Oman Pharma</span></li>
+          </ul>
+        </div>
+        <div class="cgroup">
+          <h3 data-ar="مختبرات الفحص">Testing laboratories</h3>
+          <ul>
+            <li><span class="mono" aria-hidden="true">ALS</span><span class="cname" data-ar="ALS Arabia">ALS Arabia</span></li>
+            <li><span class="mono" aria-hidden="true">ACES</span><span class="cname" data-ar="ACES">ACES</span></li>
+          </ul>
+        </div>
+      </div>
+      <p class="cnote" data-ar="وغيرها من الجهات الحكومية والخاصة.">…and many more government and private-sector clients.</p>
     </div>
   </section>
 
