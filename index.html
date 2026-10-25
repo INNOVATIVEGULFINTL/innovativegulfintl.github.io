@@ -175,6 +175,19 @@ textarea{min-height:110px;resize:vertical}
 .err{color:#C0392B;font-size:.88rem}
 footer{border-top:1px solid rgba(255,255,255,.08)}
 footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;padding-block:24px;font-size:.85rem;color:var(--band-muted)}
+
+/* Catalogue download */
+.dl{display:grid;grid-template-columns:260px 1fr;gap:48px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:36px}
+.dl>*{min-width:0}
+.dl .cover{display:block;border-radius:10px;overflow:hidden;box-shadow:0 24px 50px -24px rgba(14,27,61,.45);transform:rotate(-2deg);transition:transform .3s ease;max-width:100%}
+html[dir="rtl"] .dl .cover{transform:rotate(2deg)}
+.dl .cover:hover{transform:rotate(0)}
+.dl h2{margin-top:10px}
+.dl p.lead{color:var(--muted);margin-top:14px;max-width:56ch}
+.dl .meta{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:18px;font-size:.88rem;color:var(--muted)}
+.dl .meta b{color:var(--ink);font-weight:600}
+.dl .actions .btn.outline{border-color:var(--line);color:var(--ink);background:transparent}
+@media (max-width:760px){.dl{grid-template-columns:1fr;padding:24px;gap:28px}.dl .cover{width:200px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -189,6 +202,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
     <ul>
       <li><a href="#products" data-ar="المنتجات">Products</a></li>
       <li><a href="#brands" data-ar="العلامات التجارية">Brands</a></li>
+      <li><a href="#catalogue" data-ar="الكتالوج">Catalogue</a></li>
       <li><a href="#sectors" data-ar="القطاعات">Sectors</a></li>
       <li><a href="#contact" data-ar="اتصل بنا">Contact</a></li>
     </ul>
@@ -395,6 +409,26 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
           <ul><li data-ar="أعمدة HPLC وGC والأعمدة التحضيرية وأعمدة SPE">HPLC, GC and prep columns, SPE columns</li><li data-ar="فلاتر المحاقن والأغشية وقوارير العيّنات">Syringe filters, membranes, sample vials</li><li data-ar="الزجاجيات والبلاستيكيات والبواتق">Glassware, plasticware and crucibles</li></ul>
           <div class="makers"><b>Welch Materials</b> <span data-ar="· إضافة إلى الأدوات المختبرية العامة">· plus general labware</span></div></div>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="catalogue" style="padding-top:0">
+    <div class="wrap">
+      <div class="dl">
+        <a class="cover" href="assets/catalogue/IGI-Product-Range-2026-27.pdf" target="_blank" rel="noopener" aria-label="Open the IGI Product Range 2026–27 catalogue">
+          <img src="assets/catalogue/cover.jpg" alt="Cover of the IGI Product Range 2026–27 catalogue" width="260" height="368" loading="lazy">
+        </a>
+        <div>
+          <div class="eyebrow" data-ar="تحميل الكتالوج">Download</div>
+          <h2 data-ar="كتالوج منتجات IGI 2026–2027">IGI Product Range 2026–27</h2>
+          <p class="lead" data-ar="جميع خطوط منتجاتنا والعلامات التجارية التي نمثّلها في ملف واحد. شاركه مع فريق المختبر أو المشتريات، أو أرفقه بطلب عرض السعر.">Our full product lines and the brands we represent in one file. Share it with your lab or procurement team, or attach it to your quotation request.</p>
+          <div class="meta"><span><b>PDF</b> · <span class="ltr">10 MB</span></span><span><b class="ltr">8</b> <span data-ar="صفحات">pages</span></span><span data-ar="باللغة الإنجليزية">English</span></div>
+          <div class="actions">
+            <a class="btn primary" href="assets/catalogue/IGI-Product-Range-2026-27.pdf" download="IGI-Product-Range-2026-27.pdf" data-ar="تحميل الكتالوج (PDF)">Download catalogue (PDF)</a>
+            <a class="btn outline" href="assets/catalogue/IGI-Product-Range-2026-27.pdf" target="_blank" rel="noopener" data-ar="عرض في المتصفح">View in browser</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
