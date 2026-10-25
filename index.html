@@ -110,7 +110,11 @@ section.block{padding-block:84px}
 /* Logo wall */
 .logos{background:var(--surface);border-bottom:1px solid var(--line)}
 .logos .wrap{padding-block:44px}
-.logos .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 24px;margin-bottom:22px}
+.logos .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px 24px;margin-bottom:22px}
+.logos .top>div{min-width:0}
+.logos .top p{margin-top:4px}
+.top-dl{display:flex;flex-wrap:wrap;gap:10px}
+.btn.outline{border-color:var(--line);color:var(--ink);background:transparent}
 .logos h2{font-size:clamp(1.3rem,2.2vw,1.6rem)}
 .logos .top p{color:var(--muted);font-size:.92rem}
 .wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
@@ -250,8 +254,14 @@ html[dir="rtl"] .dl .cover{transform:rotate(2deg)}
   <section class="logos" id="brands">
     <div class="wrap">
       <div class="top">
-        <h2 data-ar="العلامات التجارية التي نمثّلها">Brands we represent</h2>
-        <p data-ar="شركات مصنّعة رائدة عالمياً، بدعم محلي من مسقط.">World-leading manufacturers, supported locally from Muscat.</p>
+        <div>
+          <h2 data-ar="العلامات التجارية التي نمثّلها">Brands we represent</h2>
+          <p data-ar="شركات مصنّعة رائدة عالمياً، بدعم محلي من مسقط.">World-leading manufacturers, supported locally from Muscat.</p>
+        </div>
+        <div class="top-dl">
+          <a class="btn primary" href="assets/catalogue/IGI-Product-Range-2026-27.pdf" download="IGI-Product-Range-2026-27.pdf" data-ar="تحميل الكتالوج (PDF)">Download catalogue (PDF)</a>
+          <a class="btn outline" href="assets/catalogue/IGI-Product-Range-2026-27.pdf" target="_blank" rel="noopener" data-ar="عرض في المتصفح">View in browser</a>
+        </div>
       </div>
       <div class="wall">
         <figure><img src="assets/brands/wtw.png" alt="WTW, a Xylem brand" loading="lazy"></figure>
