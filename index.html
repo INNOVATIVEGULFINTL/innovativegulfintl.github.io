@@ -194,17 +194,25 @@ html[dir="rtl"] .dl .cover{transform:rotate(2deg)}
 @media (max-width:760px){.dl{grid-template-columns:1fr;padding:24px;gap:28px}.dl .cover{width:200px}}
 
 section[id]{scroll-margin-top:76px}
-/* Customers */
+/* Customers – moving logo slides */
 #customers{border-bottom:1px solid var(--line)}
-.cust{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
-@media (max-width:900px){.cust{grid-template-columns:1fr}}
-.cgroup{min-width:0}
-.cgroup h3{font-size:.95rem;font-weight:600;color:var(--muted);padding-bottom:10px;border-bottom:1px solid var(--line);margin-bottom:12px}
-.cgroup ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.cgroup li{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;min-width:0}
-.mono{flex:none;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--wave-soft);color:var(--wave);font-family:var(--f-mono);font-weight:500;font-size:.78rem;letter-spacing:.02em;direction:ltr}
-.cname{font-family:var(--f-display);font-weight:600;font-size:1rem;line-height:1.3;overflow-wrap:anywhere}
+.marquees{display:grid;gap:14px;direction:ltr}
+.marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.track{list-style:none;margin:0;padding:4px 0;display:flex;gap:14px;width:max-content;animation:slide 45s linear infinite}
+.marquee.rev .track{animation-direction:reverse;animation-duration:50s}
+.marquee:hover .track{animation-play-state:paused}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 7px))}}
+.ctile{flex:none;width:220px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+.clogo{height:64px;width:100%;display:flex;align-items:center;justify-content:center;background:var(--tile);border-radius:10px}
+.clogo img{max-height:52px;max-width:170px;width:auto;object-fit:contain}
+.clogo img{display:none}
+.clogo.has img{display:block}
+.clogo.has .mono{display:none}
+.mono{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--wave-soft);color:var(--wave);font-family:var(--f-mono);font-weight:500;font-size:.8rem}
+.cname{font-family:var(--f-display);font-weight:600;font-size:.95rem;line-height:1.3;min-height:2.6em;display:flex;align-items:center}
+html[dir="rtl"] .cname{direction:rtl}
 .cnote{margin-top:22px;color:var(--muted);font-size:.92rem}
+@media (prefers-reduced-motion:reduce){.track{animation:none;flex-wrap:wrap;width:auto;justify-content:center}.track [aria-hidden="true"]{display:none}.marquee{-webkit-mask-image:none;mask-image:none}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -480,40 +488,12 @@ section[id]{scroll-margin-top:76px}
         <div><div class="eyebrow" data-ar="عملاؤنا">Our customers</div><h2 data-ar="موثوقون لدى جامعات عُمان وصناعاتها ومختبراتها.">Trusted by Oman's universities, industry and laboratories.</h2></div>
         <p data-ar="نفخر بتوريد الأجهزة والمستلزمات المختبرية لهذه الجهات وغيرها في جميع أنحاء السلطنة.">We are proud to supply laboratory instruments and consumables to these organisations and many more across the Sultanate.</p>
       </div>
-      <div class="cust">
-        <div class="cgroup">
-          <h3 data-ar="التعليم والجهات الحكومية">Education & government</h3>
-          <ul>
-            <li><span class="mono" aria-hidden="true">MoE</span><span class="cname" data-ar="وزارة التربية والتعليم">Ministry of Education</span></li>
-            <li><span class="mono" aria-hidden="true">SQU</span><span class="cname" data-ar="جامعة السلطان قابوس">Sultan Qaboos University</span></li>
-            <li><span class="mono" aria-hidden="true">UTAS</span><span class="cname" data-ar="جامعة التقنية والعلوم التطبيقية">University of Technology & Applied Sciences</span></li>
-            <li><span class="mono" aria-hidden="true">UoN</span><span class="cname" data-ar="جامعة نزوى">University of Nizwa</span></li>
-            <li><span class="mono" aria-hidden="true">NU</span><span class="cname" data-ar="الجامعة الوطنية">National University</span></li>
-            <li><span class="mono" aria-hidden="true">ASU</span><span class="cname" data-ar="جامعة الشرقية">A'Sharqiyah University</span></li>
-            <li><span class="mono" aria-hidden="true">SU</span><span class="cname" data-ar="جامعة صحار">Sohar University</span></li>
-          </ul>
-        </div>
-        <div class="cgroup">
-          <h3 data-ar="الصناعة والتصنيع">Industry & manufacturing</h3>
-          <ul>
-            <li><span class="mono" aria-hidden="true">JS</span><span class="cname" data-ar="جندال للصلب">Jindal Steel</span></li>
-            <li><span class="mono" aria-hidden="true">JZ</span><span class="cname" data-ar="الجزيرة للصلب">Jazeera Steel</span></li>
-            <li><span class="mono" aria-hidden="true">OC</span><span class="cname" data-ar="أسمنت عُمان">Oman Cement</span></li>
-            <li><span class="mono" aria-hidden="true">NP</span><span class="cname" data-ar="الدهانات الوطنية">National Paints</span></li>
-            <li><span class="mono" aria-hidden="true">ND</span><span class="cname" data-ar="الوطنية للمنظفات">National Detergent</span></li>
-            <li><span class="mono" aria-hidden="true">OP</span><span class="cname" data-ar="عُمان للأدوية">Oman Pharma</span></li>
-          </ul>
-        </div>
-        <div class="cgroup">
-          <h3 data-ar="مختبرات الفحص">Testing laboratories</h3>
-          <ul>
-            <li><span class="mono" aria-hidden="true">ALS</span><span class="cname" data-ar="ALS Arabia">ALS Arabia</span></li>
-            <li><span class="mono" aria-hidden="true">ACES</span><span class="cname" data-ar="ACES">ACES</span></li>
-          </ul>
-        </div>
-      </div>
-      <p class="cnote" data-ar="وغيرها من الجهات الحكومية والخاصة.">…and many more government and private-sector clients.</p>
     </div>
+    <div class="marquees" aria-label="Our customers">
+        <div class="marquee"><ul class="track"><li class="ctile"><div class="clogo"><img src="assets/customers/ministry-of-education.png" alt="" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="mono" aria-hidden="true">MoE</span></div><span class="cname" data-ar="وزارة التربية والتعليم">Ministry of Education</span></li><li class="ctile"><div class="clogo"><img src="assets/customers/sultan-qaboos-university.png" alt="" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="mono" aria-hidden="true">SQU</span></div><span class="cname" data-ar="جامعة السلطان قابوس">Sultan Qaboos University</span></li><li class="ctile"><div class="clogo"><img src="assets/customers/utas.png" alt="" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="mono" aria-hidden="true">UTAS</span></div><span class="cname" data-ar="جامعة التقنية والعلوم التطبيقية">University of Technology & Applied Sciences</span></li><li class="ctile"><div class="clogo"><img src="assets/customers/university-of-nizwa.png" alt="" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="mono" aria-hidden="true">UoN</span></div><span class="cname" data-ar="جامعة نزوى">University of Nizwa</span></li><li class="ctile"><div class="clogo"><img src="assets/customers/national-university.png" alt="" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="mono" aria-hidden="true">NU</span></div><span class="cname" data-ar="الجامعة الوطنية">National University</span></li><li class="ctile"><div class="clogo"><img src="assets/customers/asharqiyah-university.png" alt="" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="mono" aria-hidden="true">ASU</span></div><span class="cname" data-ar="جامعة الشرقية">A'Sharqiyah University</span></li><li class="ctile"><div class="clogo"><img src="assets/customers/sohar-university.png" alt="" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="mono" aria-hidden="true">SU</span></div><span class="cname" data-ar="جامعة صحار">Sohar University</span></li><li class="ctile" aria-hidden="true"><div class="clogo"><img src="assets/customers/ministry-of-education.png" alt="" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="mono" aria-hidden="true">MoE</span></div><span class="cname" data-ar="وزارة التربية والتعليم">Ministry of Education</span></li><li class="ctile" aria-hidden="true"><div class="clogo"><img src="assets/customers/sultan-qaboos-university.png" alt="" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="mono" aria-hidden="true">SQU</span></div><span class="cname" data-ar="جامعة السلطان قابوس">Sultan Qaboos University</span></li><li class="ctile" aria-hidden="true"><div class="clogo"><img src="assets/customers/utas.png" alt="" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="mono" aria-hidden="true">UTAS</span></div><span class="cname" data-ar="جامعة التقنية والعلوم التطبيقية">University of Technology & Applied Sciences</span></li><li class="ctile" aria-hidden="true"><div class="clogo"><img src="assets/customers/university-of-nizwa.png" alt="" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="mono" aria-hidden="true">UoN</span></div><span class="cname" data-ar="جامعة نزوى">University of Nizwa</span></li><li class="ctile" aria-hidden="true"><div class="clogo"><img src="assets/customers/national-university.png" alt="" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="mono" aria-hidden="true">NU</span></div><span class="cname" data-ar="الجامعة الوطنية">National University</span></li><li class="ctile" aria-hidden="true"><div class="clogo"><img src="assets/customers/asharqiyah-university.png" alt="" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="mono" aria-hidden="true">ASU</span></div><span class="cname" data-ar="جامعة الشرقية">A'Sharqiyah University</span></li><li class="ctile" aria-hidden="true"><div class="clogo"><img src="assets/customers/sohar-university.png" alt="" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="mono" aria-hidden="true">SU</span></div><span class="cname" data-ar="جامعة صحار">Sohar University</span></li></ul></div>
+        <div class="marquee rev"><ul class="track"><li class="ctile"><div class="clogo"><img src="assets/customers/jindal-steel.png" alt="" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="mono" aria-hidden="true">JS</span></div><span class="cname" data-ar="جندال للصلب">Jindal Steel</span></li><li class="ctile"><div class="clogo"><img src="assets/customers/jazeera-steel.png" alt="" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="mono" aria-hidden="true">JZ</span></div><span class="cname" data-ar="الجزيرة للصلب">Jazeera Steel</span></li><li class="ctile"><div class="clogo"><img src="assets/customers/oman-cement.png" alt="" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="mono" aria-hidden="true">OC</span></div><span class="cname" data-ar="أسمنت عُمان">Oman Cement</span></li><li class="ctile"><div class="clogo"><img src="assets/customers/national-paints.png" alt="" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="mono" aria-hidden="true">NP</span></div><span class="cname" data-ar="الدهانات الوطنية">National Paints</span></li><li class="ctile"><div class="clogo"><img src="assets/customers/national-detergent.png" alt="" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="mono" aria-hidden="true">ND</span></div><span class="cname" data-ar="الوطنية للمنظفات">National Detergent</span></li><li class="ctile"><div class="clogo"><img src="assets/customers/oman-pharma.png" alt="" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="mono" aria-hidden="true">OP</span></div><span class="cname" data-ar="عُمان للأدوية">Oman Pharma</span></li><li class="ctile"><div class="clogo"><img src="assets/customers/als-arabia.png" alt="" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="mono" aria-hidden="true">ALS</span></div><span class="cname" data-ar="ALS Arabia">ALS Arabia</span></li><li class="ctile"><div class="clogo"><img src="assets/customers/aces.png" alt="" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="mono" aria-hidden="true">ACES</span></div><span class="cname" data-ar="ACES">ACES</span></li><li class="ctile" aria-hidden="true"><div class="clogo"><img src="assets/customers/jindal-steel.png" alt="" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="mono" aria-hidden="true">JS</span></div><span class="cname" data-ar="جندال للصلب">Jindal Steel</span></li><li class="ctile" aria-hidden="true"><div class="clogo"><img src="assets/customers/jazeera-steel.png" alt="" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="mono" aria-hidden="true">JZ</span></div><span class="cname" data-ar="الجزيرة للصلب">Jazeera Steel</span></li><li class="ctile" aria-hidden="true"><div class="clogo"><img src="assets/customers/oman-cement.png" alt="" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="mono" aria-hidden="true">OC</span></div><span class="cname" data-ar="أسمنت عُمان">Oman Cement</span></li><li class="ctile" aria-hidden="true"><div class="clogo"><img src="assets/customers/national-paints.png" alt="" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="mono" aria-hidden="true">NP</span></div><span class="cname" data-ar="الدهانات الوطنية">National Paints</span></li><li class="ctile" aria-hidden="true"><div class="clogo"><img src="assets/customers/national-detergent.png" alt="" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="mono" aria-hidden="true">ND</span></div><span class="cname" data-ar="الوطنية للمنظفات">National Detergent</span></li><li class="ctile" aria-hidden="true"><div class="clogo"><img src="assets/customers/oman-pharma.png" alt="" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="mono" aria-hidden="true">OP</span></div><span class="cname" data-ar="عُمان للأدوية">Oman Pharma</span></li><li class="ctile" aria-hidden="true"><div class="clogo"><img src="assets/customers/als-arabia.png" alt="" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="mono" aria-hidden="true">ALS</span></div><span class="cname" data-ar="ALS Arabia">ALS Arabia</span></li><li class="ctile" aria-hidden="true"><div class="clogo"><img src="assets/customers/aces.png" alt="" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span class="mono" aria-hidden="true">ACES</span></div><span class="cname" data-ar="ACES">ACES</span></li></ul></div>
+    </div>
+    <div class="wrap"><p class="cnote" data-ar="وغيرها من الجهات الحكومية والخاصة.">…and many more government and private-sector clients.</p></div>
   </section>
 
   <section class="block" id="why">
