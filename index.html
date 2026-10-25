@@ -1,79 +1,94 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Innovative Gulf International (IGI), Muscat – supplier of analytical, environmental and laboratory equipment in Oman: WTW, YSI, Atago, JSR, Nabertherm, Endecotts, Metkon and more.">
 <title>Innovative Gulf International</title>
+<meta name="description" content="Innovative Gulf International (IGI), Muscat – supplier of analytical, environmental and laboratory equipment in Oman: WTW, YSI, Atago, JSR, Nabertherm, Endecotts, Metkon and more.">
+<link rel="icon" type="image/png" href="assets/igi-logo.png">
+<meta property="og:title" content="Innovative Gulf International">
+<meta property="og:description" content="Scientific & laboratory instrumentation, process monitoring and field testing solutions in Oman.">
+<meta property="og:image" content="assets/igi-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: lab-bench grid. Navy instrument band up top with a live meter readout, then a calm white catalogue with a sector filter, closing on a contact desk. */
+/* Layout: lab-bench grid. Navy instrument band with a live meter readout, a logo wall, a photo catalogue with a sector filter, closing on a contact desk. */
 :root{
-  --ink:#0E1B3D;          /* deep navy, text + bands */
-  --paper:#F6F8FC;        /* cool lab white */
-  --surface:#FFFFFF;
-  --line:#DCE2EE;
-  --muted:#56617C;
-  --wave:#4C6FE0;         /* IGI logo blue */
-  --wave-soft:#E6ECFC;
-  --lcd:#B9F3D2;          /* meter display green */
+  --ink:#0E1B3D; --paper:#F6F8FC; --surface:#FFFFFF; --line:#DCE2EE; --muted:#56617C;
+  --wave:#4C6FE0; --wave-soft:#E6ECFC; --lcd:#B9F3D2; --tile:#FFFFFF;
   --band:#0E1B3D; --band-fg:#EEF2FB; --band-muted:#A7B3D1;
-  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
-  --f-body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
-  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --f-display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
   --gut-l:max(16px, env(safe-area-inset-left, 0px));
   --gut-r:max(16px, env(safe-area-inset-right, 0px));
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --ink:#E8EDF8; --paper:#0B1226; --surface:#121B35; --line:#24304F; --muted:#9AA6C4;
-  --wave:#7F9BF0; --wave-soft:#1A2648; --lcd:#9EEBC0;
+  --wave:#7F9BF0; --wave-soft:#1A2648; --lcd:#9EEBC0; --tile:#F4F6FB;
   --band:#060C1C; --band-fg:#EEF2FB; --band-muted:#A7B3D1; color-scheme:dark }}
 :root[data-theme="dark"]{
   --ink:#E8EDF8; --paper:#0B1226; --surface:#121B35; --line:#24304F; --muted:#9AA6C4;
-  --wave:#7F9BF0; --wave-soft:#1A2648; --lcd:#9EEBC0;
+  --wave:#7F9BF0; --wave-soft:#1A2648; --lcd:#9EEBC0; --tile:#F4F6FB;
   --band:#060C1C; --band-fg:#EEF2FB; --band-muted:#A7B3D1; color-scheme:dark }
-
+html[lang="ar"]{
+  --f-display:"IBM Plex Sans Arabic","Segoe UI",Tahoma,sans-serif;
+  --f-body:"IBM Plex Sans Arabic","Segoe UI",Tahoma,sans-serif;
+}
+html{scroll-behavior:smooth}
 *{box-sizing:border-box}
-body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6}
+img{max-width:100%;display:block}
+[hidden]{display:none!important}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--band)}
 .wrap{max-width:1160px;margin:0 auto;padding-left:var(--gut-l);padding-right:var(--gut-r)}
-h1,h2,h3{font-family:var(--f-display);line-height:1.1;text-wrap:balance;margin:0}
+h1,h2,h3{font-family:var(--f-display);line-height:1.15;text-wrap:balance;margin:0}
 h2{font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:700;letter-spacing:-.01em}
+html[lang="ar"] h1,html[lang="ar"] h2{letter-spacing:0;line-height:1.35}
 p{margin:0}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--wave);outline-offset:3px;border-radius:4px}
 .eyebrow{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--wave)}
+html[lang="ar"] .eyebrow{font-family:var(--f-body);letter-spacing:0;font-size:.9rem;font-weight:600}
 .band .eyebrow{color:var(--lcd)}
+.ltr{direction:ltr;unicode-bidi:isolate}
 
 /* Header */
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--band);color:var(--band-fg);border-bottom:1px solid rgba(255,255,255,.08)}
-.nav{display:flex;align-items:center;gap:24px;padding-block:14px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.brand b{font-family:var(--f-display);font-weight:700;font-size:1.05rem;line-height:1.1}
+.nav{display:flex;align-items:center;gap:20px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+.brand img{width:44px;height:44px;border-radius:50%;flex:none}
+.brand b{font-family:var(--f-display);font-weight:700;font-size:1.05rem;line-height:1.15;display:block}
 .brand small{display:block;font-family:var(--f-mono);font-size:.68rem;letter-spacing:.12em;color:var(--band-muted);text-transform:uppercase}
-.nav ul{display:flex;gap:22px;list-style:none;margin:0 0 0 auto;padding:0}
+html[lang="ar"] .brand small{font-family:var(--f-body);letter-spacing:0;font-size:.78rem}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0;margin-inline-start:auto;padding:0}
 .nav ul a{text-decoration:none;color:var(--band-muted);font-size:.92rem}
 .nav ul a:hover{color:var(--band-fg)}
+.lang{font-family:"IBM Plex Sans Arabic",var(--f-body);font-size:.9rem;padding:7px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:transparent;color:var(--band-fg);cursor:pointer;white-space:nowrap}
 .nav .cta{background:var(--wave);color:#fff;text-decoration:none;padding:9px 16px;border-radius:999px;font-weight:600;font-size:.9rem;white-space:nowrap}
-@media (max-width:860px){.nav ul{display:none}.nav .cta{margin-left:auto}}
+@media (max-width:900px){.nav ul{display:none}.lang{margin-inline-start:auto}}
+@media (max-width:520px){.nav .cta{display:none}.brand small{display:none}}
 
 /* Hero */
 .band{background:var(--band);color:var(--band-fg)}
 .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;padding-block:64px 72px}
-.hero h1{font-size:clamp(2.3rem,5.2vw,4.1rem);font-weight:800;letter-spacing:-.02em;margin-top:14px}
+.hero>*{min-width:0}
+.hero h1{font-size:clamp(2.2rem,5vw,4rem);font-weight:800;letter-spacing:-.02em;margin-top:14px}
 .hero h1 em{font-style:normal;color:var(--lcd)}
 .hero p.lead{margin-top:20px;max-width:56ch;color:var(--band-muted);font-size:1.08rem}
-.hero .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:600;text-decoration:none;border:1px solid transparent;font-size:.95rem;cursor:pointer;font-family:var(--f-body)}
 .btn.primary{background:var(--wave);color:#fff}
 .btn.ghost{border-color:rgba(255,255,255,.28);color:var(--band-fg);background:transparent}
 .btn:hover{filter:brightness(1.08)}
-.facts{display:flex;flex-wrap:wrap;gap:28px;margin-top:40px;font-family:var(--f-mono);font-size:.82rem;color:var(--band-muted)}
-.facts strong{display:block;font-family:var(--f-display);font-size:1.6rem;color:var(--band-fg);font-weight:700}
+.facts{display:flex;flex-wrap:wrap;gap:28px;margin-top:40px;font-size:.85rem;color:var(--band-muted)}
+.facts strong{display:block;font-family:var(--f-display);font-size:1.6rem;color:var(--band-fg);font-weight:700;direction:ltr;unicode-bidi:isolate}
+@media (max-width:900px){.hero{grid-template-columns:1fr;gap:40px;padding-block:48px 56px}}
 
-/* Meter readout */
-.meter{background:linear-gradient(180deg,#1B2A55,#111C3B);border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:22px;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+/* Meter */
+.meter{background:linear-gradient(180deg,#1B2A55,#111C3B);border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:22px;box-shadow:0 30px 60px -30px rgba(0,0,0,.6);direction:ltr}
 .meter-top{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:.72rem;letter-spacing:.12em;color:#A7B3D1;text-transform:uppercase}
 .lcd{margin-top:14px;background:#0A1530;border-radius:12px;padding:20px 22px;border:1px solid rgba(185,243,210,.18)}
 .lcd .param{font-family:var(--f-mono);font-size:.8rem;color:#8FD3AE;letter-spacing:.08em;text-transform:uppercase;min-height:1.3em}
@@ -84,42 +99,50 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:va
 .keys button{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.06em;padding:9px 0;border-radius:8px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);color:#C9D3EC;cursor:pointer}
 .keys button[aria-pressed="true"]{background:#B9F3D2;color:#0A1530;border-color:#B9F3D2}
 .meter-cap{margin-top:12px;font-size:.8rem;color:#A7B3D1}
-
-/* Brands strip */
-.brands{border-bottom:1px solid var(--line);background:var(--surface)}
-.brands .wrap{padding-block:26px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 28px}
-.brands .lbl{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-right:6px}
-.brands span.b{font-family:var(--f-display);font-weight:700;font-size:1.02rem;color:var(--ink);opacity:.82}
+html[lang="ar"] .meter-cap{direction:rtl;font-family:var(--f-body)}
 
 section.block{padding-block:84px}
 .head{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;margin-bottom:36px}
+.head>*{min-width:0}
 .head p{color:var(--muted);max-width:52ch}
 @media (max-width:760px){.head{grid-template-columns:1fr}}
 
-/* Filter */
+/* Logo wall */
+.logos{background:var(--surface);border-bottom:1px solid var(--line)}
+.logos .wrap{padding-block:44px}
+.logos .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 24px;margin-bottom:22px}
+.logos h2{font-size:clamp(1.3rem,2.2vw,1.6rem)}
+.logos .top p{color:var(--muted);font-size:.92rem}
+.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.wall figure{margin:0;background:var(--tile);border:1px solid var(--line);border-radius:12px;height:84px;display:flex;align-items:center;justify-content:center;padding:12px 16px}
+.wall img{max-height:54px;width:auto;object-fit:contain}
+
+/* Filter + product cards */
 .filter{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
 .filter button{font-family:var(--f-body);font-size:.88rem;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
 .filter button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-
-/* Product cards */
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 @media (max-width:980px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:620px){.grid{grid-template-columns:1fr}}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:12px;min-width:0}
-.card .spec{font-family:var(--f-mono);font-size:.78rem;color:var(--wave);background:var(--wave-soft);align-self:flex-start;padding:4px 10px;border-radius:6px}
-.card h3{font-size:1.25rem;font-weight:700}
-.card ul{margin:0;padding-left:18px;color:var(--muted);font-size:.93rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.card .ph{background:#fff;aspect-ratio:4/3;max-width:100%;border-bottom:1px solid var(--line)}
+.card .ph img{width:100%;height:100%;object-fit:contain;transition:transform .4s ease}
+.card:hover .ph img{transform:scale(1.04)}
+.card .body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card .spec{font-family:var(--f-mono);font-size:.76rem;color:var(--wave);background:var(--wave-soft);align-self:flex-start;padding:4px 10px;border-radius:6px;direction:ltr}
+.card h3{font-size:1.22rem;font-weight:700}
+.card ul{margin:0;padding:0;padding-inline-start:18px;color:var(--muted);font-size:.93rem}
 .card .makers{margin-top:auto;padding-top:12px;border-top:1px dashed var(--line);font-size:.82rem;color:var(--muted)}
 .card .makers b{color:var(--ink);font-weight:600}
 
 /* Sectors */
 .sectors{background:var(--surface);border-block:1px solid var(--line)}
-.sec-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--line)}
+.sec-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line)}
 @media (max-width:860px){.sec-list{grid-template-columns:1fr}}
-.sec{padding:26px 24px 26px 0;border-bottom:1px solid var(--line);min-width:0}
+.sec{padding-block:26px;padding-inline-end:24px;border-bottom:1px solid var(--line);min-width:0}
 .sec h3{font-size:1.15rem;font-weight:700;margin-bottom:8px}
 .sec p{color:var(--muted);font-size:.93rem}
-.sec .who{margin-top:10px;font-family:var(--f-mono);font-size:.75rem;color:var(--wave);letter-spacing:.04em}
+.sec .who{margin-top:10px;font-size:.8rem;color:var(--wave);font-weight:500}
 
 /* Why */
 .why{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
@@ -131,12 +154,14 @@ section.block{padding-block:84px}
 
 /* Contact */
 .contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;padding-block:80px}
+.contact>*{min-width:0}
 @media (max-width:860px){.contact{grid-template-columns:1fr}}
 .contact p.lead{color:var(--band-muted);margin-top:14px;max-width:46ch}
 .desk{display:grid;gap:12px;margin-top:28px}
 .row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border:1px solid rgba(255,255,255,.12);border-radius:12px;min-width:0}
-.row span{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--band-muted);display:block}
-.row strong{font-size:1.05rem;user-select:all;overflow-wrap:anywhere}
+.row span{font-size:.8rem;color:var(--band-muted);display:block}
+.row strong{font-size:1.05rem;overflow-wrap:anywhere}
+.row a{text-decoration:none}
 .copy{font-family:var(--f-body);font-size:.82rem;padding:7px 12px;border-radius:8px;border:1px solid rgba(255,255,255,.2);background:transparent;color:var(--band-fg);cursor:pointer;flex:none}
 form{background:var(--surface);color:var(--ink);border-radius:18px;padding:26px;display:grid;gap:14px;min-width:0}
 form h3{font-size:1.3rem}
@@ -145,41 +170,30 @@ form h3{font-size:1.3rem}
 label{display:grid;gap:6px;font-size:.84rem;font-weight:500;color:var(--muted)}
 input,select,textarea{font:inherit;font-size:.95rem;padding:11px 12px;border-radius:10px;border:1px solid var(--line);background:var(--paper);color:var(--ink);width:100%}
 textarea{min-height:110px;resize:vertical}
-.out{display:grid;gap:10px;border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--paper)}
-.out pre{margin:0;white-space:pre-wrap;font-family:var(--f-mono);font-size:.8rem;color:var(--ink)}
-.out .hint{font-size:.85rem;color:var(--muted)}
-.out .btn{background:var(--wave);color:#fff;justify-self:start}
-
+.send{display:flex;flex-wrap:wrap;gap:10px}
+.btn.wa{background:#1F9D55;color:#fff}
+.err{color:#C0392B;font-size:.88rem}
 footer{border-top:1px solid rgba(255,255,255,.08)}
 footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;padding-block:24px;font-size:.85rem;color:var(--band-muted)}
-
-.hero,.meter{min-width:0}
-@media (max-width:900px){.hero{grid-template-columns:1fr;gap:40px;padding-block:48px 56px}}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
 </style>
-
-<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}html{scroll-behavior:smooth}</style>
 </head>
 <body>
+
 <header>
   <div class="wrap nav">
-    <a class="brand" href="#top" aria-label="Innovative Gulf International home">
-      <svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true">
-        <circle cx="22" cy="22" r="21" fill="#4C6FE0"/>
-        <path d="M3 17c6-4 12-4 19 0s13 4 19 0" stroke="#0E1B3D" stroke-width="2.4" fill="none"/>
-        <path d="M2 25c6-4 13-4 20 0s14 4 20 0" stroke="#0E1B3D" stroke-width="2.4" fill="none"/>
-        <path d="M5 33c5-3 11-3 17 0s12 3 17 0" stroke="#0E1B3D" stroke-width="2.4" fill="none"/>
-        <text x="22" y="15" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="9" fill="#fff">IGI</text>
-      </svg>
-      <span><b>Innovative Gulf International</b><small>Muscat · Sultanate of Oman</small></span>
+    <a class="brand" href="#top" aria-label="Innovative Gulf International">
+      <img src="assets/igi-logo.png" alt="" width="44" height="44">
+      <span><b data-ar="الخليج المبتكرة الدولية">Innovative Gulf International</b><small data-ar="مسقط · سلطنة عُمان">Muscat · Sultanate of Oman</small></span>
     </a>
     <ul>
-      <li><a href="#products">Products</a></li>
-      <li><a href="#sectors">Sectors</a></li>
-      <li><a href="#why">Why IGI</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#products" data-ar="المنتجات">Products</a></li>
+      <li><a href="#brands" data-ar="العلامات التجارية">Brands</a></li>
+      <li><a href="#sectors" data-ar="القطاعات">Sectors</a></li>
+      <li><a href="#contact" data-ar="اتصل بنا">Contact</a></li>
     </ul>
-    <a class="cta" href="#contact">Request a quote</a>
+    <button class="lang" id="langBtn" type="button" aria-label="Switch language">العربية</button>
+    <a class="cta" href="#contact" data-ar="اطلب عرض سعر">Request a quote</a>
   </div>
 </header>
 
@@ -187,22 +201,22 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
   <section class="band">
     <div class="wrap hero">
       <div>
-        <div class="eyebrow">Product range 2026–27</div>
-        <h1>Laboratory instruments that give Oman <em>readings you can trust.</em></h1>
-        <p class="lead">IGI supplies analytical, environmental and laboratory equipment from world-leading manufacturers to water utilities, industry, research labs and government across the Sultanate.</p>
+        <div class="eyebrow" data-ar="مجموعة المنتجات 2026–2027">Product range 2026–27</div>
+        <h1 data-ar-html="أجهزة مختبرية تمنح عُمان <em>قراءات يمكن الوثوق بها.</em>">Laboratory instruments that give Oman <em>readings you can trust.</em></h1>
+        <p class="lead" data-ar="تورّد الخليج المبتكرة الدولية الأجهزة التحليلية والبيئية والمختبرية من كبرى الشركات العالمية المصنّعة إلى شركات المياه والصناعة ومختبرات البحث والجهات الحكومية في جميع أنحاء السلطنة.">IGI supplies analytical, environmental and laboratory equipment from world-leading manufacturers to water utilities, industry, research labs and government across the Sultanate.</p>
         <div class="actions">
-          <a class="btn primary" href="#contact">Request a quote</a>
-          <a class="btn ghost" href="#products">Browse the range</a>
+          <a class="btn primary" href="#contact" data-ar="اطلب عرض سعر">Request a quote</a>
+          <a class="btn ghost" href="#products" data-ar="تصفّح المنتجات">Browse the range</a>
         </div>
         <div class="facts">
-          <div><strong>20+</strong>manufacturers represented</div>
-          <div><strong>30–3000 °C</strong>furnace range</div>
-          <div><strong>1–20</strong>online sensors per IQ system</div>
+          <div><strong>20+</strong><span data-ar="شركة مصنّعة نمثّلها">manufacturers represented</span></div>
+          <div><strong>30–3000 °C</strong><span data-ar="نطاق حرارة الأفران">furnace range</span></div>
+          <div><strong>1–20</strong><span data-ar="حساس متصل لكل نظام IQ">online sensors per IQ system</span></div>
         </div>
       </div>
 
       <div class="meter" aria-label="Example instrument readings">
-        <div class="meter-top"><span>Multiparameter meter</span><span id="clock">CAL ✓</span></div>
+        <div class="meter-top"><span>Multiparameter meter</span><span>CAL ✓</span></div>
         <div class="lcd">
           <div class="param" id="param">pH · drinking water</div>
           <div class="value"><span id="val">7.02</span><span class="unit" id="unit">pH</span></div>
@@ -214,129 +228,172 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
           <button type="button" data-k="2" aria-pressed="false">DO</button>
           <button type="button" data-k="3" aria-pressed="false">BRIX</button>
         </div>
-        <p class="meter-cap">Sample readings, illustrating parameters our WTW and Atago instruments measure.</p>
+        <p class="meter-cap" data-ar="قراءات توضيحية للمعايير التي تقيسها أجهزة WTW وAtago.">Sample readings, illustrating parameters our WTW and Atago instruments measure.</p>
       </div>
     </div>
   </section>
 
-  <div class="brands">
+  <section class="logos" id="brands">
     <div class="wrap">
-      <span class="lbl">We represent</span>
-      <span class="b">WTW</span><span class="b">YSI</span><span class="b">Xylem</span><span class="b">SI Analytics</span><span class="b">Atago</span><span class="b">Lamy Rheology</span><span class="b">Microtrac MRB</span><span class="b">JSR</span><span class="b">Onilab</span><span class="b">CDR FoodLab</span><span class="b">Nabertherm</span><span class="b">KNF</span><span class="b">Funke Gerber</span><span class="b">Endecotts</span><span class="b">Metkon</span><span class="b">Welch Materials</span><span class="b">Huber</span><span class="b">Aanderaa</span><span class="b">SonTek</span><span class="b">HYPACK</span>
+      <div class="top">
+        <h2 data-ar="العلامات التجارية التي نمثّلها">Brands we represent</h2>
+        <p data-ar="شركات مصنّعة رائدة عالمياً، بدعم محلي من مسقط.">World-leading manufacturers, supported locally from Muscat.</p>
+      </div>
+      <div class="wall">
+        <figure><img src="assets/brands/wtw.png" alt="WTW, a Xylem brand" loading="lazy"></figure>
+        <figure><img src="assets/brands/ysi.png" alt="YSI, a Xylem brand" loading="lazy"></figure>
+        <figure><img src="assets/brands/xylem.png" alt="Xylem" loading="lazy"></figure>
+        <figure><img src="assets/brands/si-analytics.png" alt="SI Analytics" loading="lazy"></figure>
+        <figure><img src="assets/brands/atago.png" alt="Atago" loading="lazy"></figure>
+        <figure><img src="assets/brands/lamy.png" alt="Lamy Rheology" loading="lazy"></figure>
+        <figure><img src="assets/brands/microtrac.png" alt="Microtrac MRB" loading="lazy"></figure>
+        <figure><img src="assets/brands/jsr.png" alt="JS Research Inc." loading="lazy"></figure>
+        <figure><img src="assets/brands/onilab.png" alt="Onilab" loading="lazy"></figure>
+        <figure><img src="assets/brands/foodlab.png" alt="CDR FoodLab" loading="lazy"></figure>
+        <figure><img src="assets/brands/nabertherm.png" alt="Nabertherm" loading="lazy"></figure>
+        <figure><img src="assets/brands/knf.png" alt="KNF" loading="lazy"></figure>
+        <figure><img src="assets/brands/funke-gerber.png" alt="Funke Gerber" loading="lazy"></figure>
+        <figure><img src="assets/brands/endecotts.png" alt="Endecotts" loading="lazy"></figure>
+        <figure><img src="assets/brands/metkon.png" alt="Metkon" loading="lazy"></figure>
+        <figure><img src="assets/brands/welch.png" alt="Welch Materials" loading="lazy"></figure>
+        <figure><img src="assets/brands/huber.png" alt="Huber" loading="lazy"></figure>
+        <figure><img src="assets/brands/aanderaa.png" alt="Aanderaa" loading="lazy"></figure>
+        <figure><img src="assets/brands/sontek.png" alt="SonTek" loading="lazy"></figure>
+        <figure><img src="assets/brands/hypack.png" alt="HYPACK" loading="lazy"></figure>
+        <figure><img src="assets/brands/insmart.png" alt="Insmart Systems" loading="lazy"></figure>
+        <figure><img src="assets/brands/hira.png" alt="Hira Laboratory Testing Equipment" loading="lazy"></figure>
+        <figure><img src="assets/brands/impact.png" alt="Impact Test Equipment" loading="lazy"></figure>
+      </div>
     </div>
-  </div>
+  </section>
 
   <section class="block" id="products">
     <div class="wrap">
       <div class="head">
-        <div><div class="eyebrow">Product range</div><h2>Everything a lab bench needs, from sample to result.</h2></div>
-        <p>Filter by your industry to see the instruments other labs like yours rely on. Every line is supported locally from Muscat.</p>
+        <div><div class="eyebrow" data-ar="مجموعة المنتجات">Product range</div><h2 data-ar="كل ما يحتاجه المختبر، من العيّنة إلى النتيجة.">Everything a lab bench needs, from sample to result.</h2></div>
+        <p data-ar="اختر قطاعك لعرض الأجهزة التي تعتمد عليها مختبرات مماثلة. جميع خطوط المنتجات مدعومة محلياً من مسقط.">Filter by your industry to see the instruments other labs like yours rely on. Every line is supported locally from Muscat.</p>
       </div>
       <div class="filter" role="group" aria-label="Filter by sector">
-        <button type="button" data-f="all" aria-pressed="true">All products</button>
-        <button type="button" data-f="water" aria-pressed="false">Water &amp; wastewater</button>
-        <button type="button" data-f="food" aria-pressed="false">Food &amp; dairy</button>
-        <button type="button" data-f="materials" aria-pressed="false">Cement, mining &amp; construction</button>
-        <button type="button" data-f="metal" aria-pressed="false">Metals &amp; oil and gas</button>
-        <button type="button" data-f="research" aria-pressed="false">Research &amp; education</button>
+        <button type="button" data-f="all" aria-pressed="true" data-ar="جميع المنتجات">All products</button>
+        <button type="button" data-f="water" aria-pressed="false" data-ar="المياه ومياه الصرف">Water &amp; wastewater</button>
+        <button type="button" data-f="food" aria-pressed="false" data-ar="الأغذية والألبان">Food &amp; dairy</button>
+        <button type="button" data-f="materials" aria-pressed="false" data-ar="الإسمنت والتعدين والإنشاءات">Cement, mining &amp; construction</button>
+        <button type="button" data-f="metal" aria-pressed="false" data-ar="المعادن والنفط والغاز">Metals &amp; oil and gas</button>
+        <button type="button" data-f="research" aria-pressed="false" data-ar="البحث العلمي والتعليم">Research &amp; education</button>
       </div>
 
       <div class="grid" id="grid">
         <article class="card" data-s="water research">
-          <span class="spec">pH · µS/cm · mg/L O₂ · NTU</span>
-          <h3>Water quality meters</h3>
-          <ul><li>Portable, benchtop and online meters</li><li>pH, conductivity, TDS, salinity, DO, ORP, turbidity</li><li>Complete BOD and COD systems, spectrophotometers</li></ul>
-          <div class="makers"><b>WTW</b> · a Xylem brand</div>
+          <div class="ph"><img src="assets/products/water-meters.jpg" alt="WTW benchtop multiparameter meter" loading="lazy"></div>
+          <div class="body"><span class="spec">pH · µS/cm · mg/L O₂ · NTU</span>
+          <h3 data-ar="أجهزة قياس جودة المياه">Water quality meters</h3>
+          <ul><li data-ar="أجهزة محمولة ومكتبية ومتصلة">Portable, benchtop and online meters</li><li data-ar="الأس الهيدروجيني، التوصيلية، الأملاح الذائبة، الملوحة، الأكسجين المذاب، جهد الأكسدة، العكارة">pH, conductivity, TDS, salinity, DO, ORP, turbidity</li><li data-ar="أنظمة متكاملة لتحليل BOD وCOD، وأجهزة طيف ضوئي">Complete BOD and COD systems, spectrophotometers</li></ul>
+          <div class="makers"><b>WTW</b> · a Xylem brand</div></div>
         </article>
         <article class="card" data-s="water">
-          <span class="spec">1–20 sensors · 3-yr warranty</span>
-          <h3>IQ SensorNet XT online monitoring</h3>
-          <ul><li>Continuous wastewater monitoring</li><li>NH₄, NO₃, K, COD, TOC, BOD, DOC, SAC, TSS</li><li>One cable for power and data, lightning protection</li></ul>
-          <div class="makers"><b>WTW</b> · a Xylem brand</div>
+          <div class="ph"><img src="assets/products/iq-sensornet.jpg" alt="IQ SensorNet XT online monitoring system" loading="lazy"></div>
+          <div class="body"><span class="spec">1–20 sensors · 3-yr warranty</span>
+          <h3 data-ar="نظام IQ SensorNet XT للمراقبة المستمرة">IQ SensorNet XT online monitoring</h3>
+          <ul><li data-ar="مراقبة مستمرة لمياه الصرف الصحي">Continuous wastewater monitoring</li><li>NH₄, NO₃, K, COD, TOC, BOD, DOC, SAC, TSS</li><li data-ar="كابل واحد للطاقة والبيانات، وحماية من الصواعق">One cable for power and data, lightning protection</li></ul>
+          <div class="makers"><b>WTW</b> · a Xylem brand</div></div>
         </article>
         <article class="card" data-s="water research">
-          <span class="spec">Ocean · coastal · surface · ground</span>
-          <h3>Environmental &amp; hydrographic monitoring</h3>
-          <ul><li>Water quality sondes and data platforms</li><li>Buoys, acoustic Doppler flow instruments</li><li>Hydrographic survey software</li></ul>
-          <div class="makers"><b>Xylem · YSI · Aanderaa · SonTek · HYPACK</b></div>
+          <div class="ph"><img src="assets/products/environmental.jpg" alt="YSI water quality sondes" loading="lazy"></div>
+          <div class="body"><span class="spec">Ocean · coastal · surface · ground</span>
+          <h3 data-ar="المراقبة البيئية والمسح الهيدروغرافي">Environmental &amp; hydrographic monitoring</h3>
+          <ul><li data-ar="مجسّات جودة المياه ومنصات جمع البيانات">Water quality sondes and data platforms</li><li data-ar="عوامات وأجهزة قياس التدفق بتقنية دوبلر الصوتية">Buoys, acoustic Doppler flow instruments</li><li data-ar="برمجيات المسح الهيدروغرافي">Hydrographic survey software</li></ul>
+          <div class="makers"><b>Xylem · YSI · Aanderaa · SonTek · HYPACK</b></div></div>
         </article>
         <article class="card" data-s="food">
-          <span class="spec">°Brix · % salt · nD</span>
-          <h3>Refractometers</h3>
-          <ul><li>Benchtop and pocket digital refractometers</li><li>Brix and salt meters</li><li>Juices, sauces, confectionery, brines</li></ul>
-          <div class="makers"><b>Atago</b></div>
+          <div class="ph"><img src="assets/products/refractometers.jpg" alt="Atago pocket digital refractometer" loading="lazy"></div>
+          <div class="body"><span class="spec">°Brix · % salt · nD</span>
+          <h3 data-ar="أجهزة قياس الانكسار">Refractometers</h3>
+          <ul><li data-ar="أجهزة رقمية مكتبية وجيبية">Benchtop and pocket digital refractometers</li><li data-ar="أجهزة قياس البريكس والملوحة">Brix and salt meters</li><li data-ar="العصائر والصلصات والحلويات والمحاليل الملحية">Juices, sauces, confectionery, brines</li></ul>
+          <div class="makers"><b>Atago</b></div></div>
         </article>
         <article class="card" data-s="food">
-          <span class="spec">FFA · PV · AnV · ALP · MUN</span>
-          <h3>Food &amp; beverage analysers</h3>
-          <ul><li>Oils and fats, frying oils, fish oil, nuts</li><li>Milk and dairy, egg, bakery, tomato products</li><li>Animal feed, silage and pet food</li></ul>
-          <div class="makers"><b>CDR FoodLab</b></div>
+          <div class="ph"><img src="assets/products/foodlab.jpg" alt="CDR FoodLab analyser" loading="lazy"></div>
+          <div class="body"><span class="spec">FFA · PV · AnV · ALP · MUN</span>
+          <h3 data-ar="أجهزة تحليل الأغذية والمشروبات">Food &amp; beverage analysers</h3>
+          <ul><li data-ar="الزيوت والدهون، زيوت القلي، زيت السمك، المكسرات">Oils and fats, frying oils, fish oil, nuts</li><li data-ar="الحليب ومنتجات الألبان، البيض، المخبوزات، منتجات الطماطم">Milk and dairy, egg, bakery, tomato products</li><li data-ar="الأعلاف والسيلاج وأغذية الحيوانات الأليفة">Animal feed, silage and pet food</li></ul>
+          <div class="makers"><b>CDR FoodLab</b></div></div>
         </article>
         <article class="card" data-s="food">
-          <span class="spec">Butterfat % · Gerber method</span>
-          <h3>Dairy fat testing</h3>
-          <ul><li>Gerber centrifuges</li><li>Butyrometers and Gerber tubes</li><li>Routine milk and cream QC</li></ul>
-          <div class="makers"><b>Funke Gerber</b></div>
+          <div class="ph"><img src="assets/products/gerber.jpg" alt="Funke Gerber centrifuge" loading="lazy"></div>
+          <div class="body"><span class="spec">Butterfat % · Gerber method</span>
+          <h3 data-ar="فحص دهون الحليب">Dairy fat testing</h3>
+          <ul><li data-ar="أجهزة طرد مركزي جربر">Gerber centrifuges</li><li data-ar="أنابيب جربر ومقاييس الدهون">Butyrometers and Gerber tubes</li><li data-ar="ضبط الجودة اليومي للحليب والقشطة">Routine milk and cream QC</li></ul>
+          <div class="makers"><b>Funke Gerber</b></div></div>
         </article>
         <article class="card" data-s="food research materials">
-          <span class="spec">mPa·s · texture profile</span>
-          <h3>Viscometers, rheometers &amp; texture</h3>
-          <ul><li>Rotational viscometers and rheometers</li><li>Texture analysers</li><li>Paints, food, cosmetics, polymers</li></ul>
-          <div class="makers"><b>Lamy Rheology</b></div>
+          <div class="ph"><img src="assets/products/viscometers.jpg" alt="Lamy Rheology rotational viscometer" loading="lazy"></div>
+          <div class="body"><span class="spec">mPa·s · texture profile</span>
+          <h3 data-ar="أجهزة اللزوجة والريولوجيا وتحليل القوام">Viscometers, rheometers &amp; texture</h3>
+          <ul><li data-ar="أجهزة لزوجة دوّارة وأجهزة ريولوجيا">Rotational viscometers and rheometers</li><li data-ar="أجهزة تحليل القوام">Texture analysers</li><li data-ar="الدهانات والأغذية ومستحضرات التجميل والبوليمرات">Paints, food, cosmetics, polymers</li></ul>
+          <div class="makers"><b>Lamy Rheology</b></div></div>
         </article>
         <article class="card" data-s="metal food research">
-          <span class="spec">ppm H₂O · Karl Fischer</span>
-          <h3>Auto-titrators</h3>
-          <ul><li>Potentiometric auto-titration</li><li>Coulometric and volumetric Karl Fischer</li><li>Moisture in oils, fuels and chemicals</li></ul>
-          <div class="makers"><b>SI Analytics</b> · a Xylem brand</div>
+          <div class="ph"><img src="assets/products/titrators.jpg" alt="SI Analytics auto-titrator" loading="lazy"></div>
+          <div class="body"><span class="spec">ppm H₂O · Karl Fischer</span>
+          <h3 data-ar="أجهزة المعايرة الآلية">Auto-titrators</h3>
+          <ul><li data-ar="معايرة آلية بالجهد">Potentiometric auto-titration</li><li data-ar="كارل فيشر الكولومترية والحجمية">Coulometric and volumetric Karl Fischer</li><li data-ar="قياس الرطوبة في الزيوت والوقود والكيماويات">Moisture in oils, fuels and chemicals</li></ul>
+          <div class="makers"><b>SI Analytics</b> · a Xylem brand</div></div>
         </article>
         <article class="card" data-s="materials metal research">
-          <span class="spec">30–3000 °C</span>
-          <h3>Laboratory furnaces</h3>
-          <ul><li>Muffle and ashing furnaces</li><li>High-temperature chamber furnaces</li><li>Loss on ignition, ash content, heat treatment</li></ul>
-          <div class="makers"><b>Nabertherm</b></div>
+          <div class="ph"><img src="assets/products/furnaces.jpg" alt="Nabertherm laboratory furnace" loading="lazy"></div>
+          <div class="body"><span class="spec">30–3000 °C</span>
+          <h3 data-ar="أفران مختبرية">Laboratory furnaces</h3>
+          <ul><li data-ar="أفران الحرق والترميد">Muffle and ashing furnaces</li><li data-ar="أفران غرف عالية الحرارة">High-temperature chamber furnaces</li><li data-ar="الفقد بالحرق، محتوى الرماد، المعالجة الحرارية">Loss on ignition, ash content, heat treatment</li></ul>
+          <div class="makers"><b>Nabertherm</b></div></div>
+        </article>
+        <article class="card" data-s="materials food">
+          <div class="ph"><img src="assets/products/sieves.jpg" alt="Endecotts sieve shakers" loading="lazy"></div>
+          <div class="body"><span class="spec">ISO 3310 · µm to mm</span>
+          <h3 data-ar="المناخل وهزّازات المناخل">Sieves &amp; sieve shakers</h3>
+          <ul><li data-ar="مناخل اختبار وهزّازات مناخل">Test sieves and sieve shakers</li><li data-ar="النخل بنفث الهواء">Air-jet sieving</li><li data-ar="تحليل حجم الحبيبات للركام والدقيق والمساحيق">Particle size for aggregates, flour, powders</li></ul>
+          <div class="makers"><b>Endecotts</b></div></div>
         </article>
         <article class="card" data-s="materials">
-          <span class="spec">ISO 3310 · µm to mm</span>
-          <h3>Sieves &amp; sieve shakers</h3>
-          <ul><li>Test sieves and sieve shakers</li><li>Air-jet sieving</li><li>Particle size for aggregates, flour, powders</li></ul>
-          <div class="makers"><b>Endecotts</b></div>
-        </article>
-        <article class="card" data-s="materials">
-          <span class="spec">Jaw · disc · ball · VCM</span>
-          <h3>Crushers, mills &amp; sample dividers</h3>
-          <ul><li>Jaw crushers, disc and ball mills</li><li>Vibratory cup mills, tumbler drums</li><li>Rotary sample dividers</li></ul>
-          <div class="makers"><b>Insmart Systems · Hira · Impact Test Equipment</b></div>
+          <div class="ph"><img src="assets/products/crushers.jpg" alt="Laboratory jaw crusher" loading="lazy"></div>
+          <div class="body"><span class="spec">Jaw · disc · ball · VCM</span>
+          <h3 data-ar="الكسّارات والمطاحن ومقسّمات العيّنات">Crushers, mills &amp; sample dividers</h3>
+          <ul><li data-ar="كسّارات فكّية ومطاحن قرصية وكروية">Jaw crushers, disc and ball mills</li><li data-ar="مطاحن الكوب الاهتزازية وأسطوانات الدوران">Vibratory cup mills, tumbler drums</li><li data-ar="مقسّمات العيّنات الدوّارة">Rotary sample dividers</li></ul>
+          <div class="makers"><b>Insmart Systems · Hira · Impact Test Equipment</b></div></div>
         </article>
         <article class="card" data-s="materials research">
-          <span class="spec">BET m²/g · pore size</span>
-          <h3>Gas adsorption analysis</h3>
-          <ul><li>Surface area and pore size distribution</li><li>Gas and vapour adsorption</li><li>Catalyst evaluation</li></ul>
-          <div class="makers"><b>Microtrac MRB</b> (Microtrac Retsch GmbH)</div>
+          <div class="ph"><img src="assets/products/gas-adsorption.jpg" alt="Microtrac BELSORP gas adsorption analyser" loading="lazy"></div>
+          <div class="body"><span class="spec">BET m²/g · pore size</span>
+          <h3 data-ar="تحليل امتزاز الغازات">Gas adsorption analysis</h3>
+          <ul><li data-ar="المساحة السطحية وتوزيع حجم المسام">Surface area and pore size distribution</li><li data-ar="امتزاز الغازات والأبخرة">Gas and vapour adsorption</li><li data-ar="تقييم المحفّزات">Catalyst evaluation</li></ul>
+          <div class="makers"><b>Microtrac MRB</b> (Microtrac Retsch GmbH)</div></div>
         </article>
         <article class="card" data-s="metal">
-          <span class="spec">HV · HRC · sample prep</span>
-          <h3>Metallography</h3>
-          <ul><li>Abrasive and precision cutting</li><li>Mounting, grinding and polishing</li><li>Hardness testing, microscopy, image analysis</li></ul>
-          <div class="makers"><b>Metkon</b></div>
+          <div class="ph"><img src="assets/products/metallography.jpg" alt="Metkon precision cutting machine" loading="lazy"></div>
+          <div class="body"><span class="spec">HV · HRC · sample prep</span>
+          <h3 data-ar="الميتالوغرافيا">Metallography</h3>
+          <ul><li data-ar="القطع الكاشط والدقيق">Abrasive and precision cutting</li><li data-ar="التثبيت والطحن والتلميع">Mounting, grinding and polishing</li><li data-ar="اختبار الصلادة، المجهرية وتحليل الصور">Hardness testing, microscopy, image analysis</li></ul>
+          <div class="makers"><b>Metkon</b></div></div>
         </article>
         <article class="card" data-s="research food water">
-          <span class="spec">Class II A2 · 121 °C</span>
-          <h3>General lab equipment</h3>
-          <ul><li>Biosafety cabinets, laminar flow, autoclaves</li><li>Incubators, humidity chambers, baths, fridges</li><li>Stirrers, hotplates, shakers, vortex mixers</li></ul>
-          <div class="makers"><b>JSR</b> (JS Research Inc.)</div>
+          <div class="ph"><img src="assets/products/general-lab.jpg" alt="JSR biosafety cabinet" loading="lazy"></div>
+          <div class="body"><span class="spec">Class II A2 · 121 °C</span>
+          <h3 data-ar="معدات المختبر العامة">General lab equipment</h3>
+          <ul><li data-ar="كبائن السلامة الحيوية، التدفق الصفائحي، الأوتوكلاف">Biosafety cabinets, laminar flow, autoclaves</li><li data-ar="الحاضنات، غرف الرطوبة، الحمّامات المائية، الثلاجات">Incubators, humidity chambers, baths, fridges</li><li data-ar="الخلاطات المغناطيسية، الألواح الساخنة، الهزّازات، خلاطات الفورتكس">Stirrers, hotplates, shakers, vortex mixers</li></ul>
+          <div class="makers"><b>JSR</b> (JS Research Inc.)</div></div>
         </article>
         <article class="card" data-s="research food water metal">
-          <span class="spec">0.1 µL – 10 mL</span>
-          <h3>Pipettes, pumps &amp; evaporators</h3>
-          <ul><li>Mechanical and electronic pipettes, controllers</li><li>Bottle-top dispensers, pipette fillers</li><li>Laboratory pumps and rotary evaporators</li></ul>
-          <div class="makers"><b>Onilab · KNF</b></div>
+          <div class="ph"><img src="assets/products/pipettes.jpg" alt="Onilab mechanical pipette" loading="lazy"></div>
+          <div class="body"><span class="spec">0.1 µL – 10 mL</span>
+          <h3 data-ar="الماصّات والمضخات والمبخّرات">Pipettes, pumps &amp; evaporators</h3>
+          <ul><li data-ar="ماصّات ميكانيكية وإلكترونية وأجهزة تحكم">Mechanical and electronic pipettes, controllers</li><li data-ar="موزّعات أعلى القارورة وأجهزة تعبئة الماصّات">Bottle-top dispensers, pipette fillers</li><li data-ar="مضخات مختبرية ومبخّرات دوّارة">Laboratory pumps and rotary evaporators</li></ul>
+          <div class="makers"><b>Onilab · KNF</b></div></div>
         </article>
         <article class="card" data-s="research metal food">
-          <span class="spec">HPLC · GC · SPE · QuEChERS</span>
-          <h3>Chromatography consumables</h3>
-          <ul><li>HPLC, GC and prep columns, SPE columns</li><li>Syringe filters, membranes, sample vials</li><li>Glassware, plasticware and crucibles</li></ul>
-          <div class="makers"><b>Welch Materials</b> · plus general labware</div>
+          <div class="ph"><img src="assets/products/chromatography.jpg" alt="Sample vials" loading="lazy"></div>
+          <div class="body"><span class="spec">HPLC · GC · SPE · QuEChERS</span>
+          <h3 data-ar="مستلزمات الكروماتوغرافيا والأدوات المختبرية">Chromatography consumables</h3>
+          <ul><li data-ar="أعمدة HPLC وGC والأعمدة التحضيرية وأعمدة SPE">HPLC, GC and prep columns, SPE columns</li><li data-ar="فلاتر المحاقن والأغشية وقوارير العيّنات">Syringe filters, membranes, sample vials</li><li data-ar="الزجاجيات والبلاستيكيات والبواتق">Glassware, plasticware and crucibles</li></ul>
+          <div class="makers"><b>Welch Materials</b> <span data-ar="· إضافة إلى الأدوات المختبرية العامة">· plus general labware</span></div></div>
         </article>
       </div>
     </div>
@@ -345,16 +402,16 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
   <section class="sectors block" id="sectors">
     <div class="wrap">
       <div class="head">
-        <div><div class="eyebrow">Who we serve</div><h2>Built around the labs that keep Oman running.</h2></div>
-        <p>We work with QC managers, lab supervisors and procurement teams in both the public and private sectors, from a single instrument to a full laboratory fit-out.</p>
+        <div><div class="eyebrow" data-ar="من نخدم">Who we serve</div><h2 data-ar="في خدمة المختبرات التي تُبقي عُمان في حركة دائمة.">Built around the labs that keep Oman running.</h2></div>
+        <p data-ar="نعمل مع مديري ضبط الجودة ومشرفي المختبرات وفرق المشتريات في القطاعين العام والخاص، من جهاز واحد إلى تجهيز مختبر متكامل.">We work with QC managers, lab supervisors and procurement teams in both the public and private sectors, from a single instrument to a full laboratory fit-out.</p>
       </div>
       <div class="sec-list">
-        <div class="sec"><h3>Water &amp; wastewater</h3><p>Drinking water QC, treatment plant monitoring and environmental compliance.</p><div class="who">Utilities · desalination · STPs</div></div>
-        <div class="sec"><h3>Food, dairy &amp; milling</h3><p>Raw material intake, process control and finished product release testing.</p><div class="who">Dairies · flour mills · food factories</div></div>
-        <div class="sec"><h3>Cement, mining &amp; construction</h3><p>Sample preparation, particle size, loss on ignition and materials testing.</p><div class="who">Cement plants · quarries · testing labs</div></div>
-        <div class="sec"><h3>Oil, gas &amp; metals</h3><p>Moisture, titration, metallography and heat treatment for plant laboratories.</p><div class="who">Refineries · gas plants · steel</div></div>
-        <div class="sec"><h3>Research &amp; education</h3><p>Teaching and research labs equipped for chemistry, biology and engineering.</p><div class="who">Universities · colleges · schools</div></div>
-        <div class="sec"><h3>Government laboratories</h3><p>Food safety, agriculture, environment and public health reference labs.</p><div class="who">Ministries · municipalities · centres</div></div>
+        <div class="sec"><h3 data-ar="المياه ومياه الصرف">Water &amp; wastewater</h3><p data-ar="ضبط جودة مياه الشرب، ومراقبة محطات المعالجة، والامتثال البيئي.">Drinking water QC, treatment plant monitoring and environmental compliance.</p><div class="who" data-ar="شركات المياه · التحلية · محطات معالجة الصرف">Utilities · desalination · STPs</div></div>
+        <div class="sec"><h3 data-ar="الأغذية والألبان والمطاحن">Food, dairy &amp; milling</h3><p data-ar="فحص المواد الخام، وضبط العمليات، وفحص المنتج النهائي قبل الإفراج.">Raw material intake, process control and finished product release testing.</p><div class="who" data-ar="مصانع الألبان · المطاحن · مصانع الأغذية">Dairies · flour mills · food factories</div></div>
+        <div class="sec"><h3 data-ar="الإسمنت والتعدين والإنشاءات">Cement, mining &amp; construction</h3><p data-ar="تحضير العيّنات، وتحليل حجم الحبيبات، والفقد بالحرق، واختبار المواد.">Sample preparation, particle size, loss on ignition and materials testing.</p><div class="who" data-ar="مصانع الإسمنت · المحاجر · مختبرات الفحص">Cement plants · quarries · testing labs</div></div>
+        <div class="sec"><h3 data-ar="النفط والغاز والمعادن">Oil, gas &amp; metals</h3><p data-ar="قياس الرطوبة والمعايرة والميتالوغرافيا والمعالجة الحرارية لمختبرات المصانع.">Moisture, titration, metallography and heat treatment for plant laboratories.</p><div class="who" data-ar="المصافي · محطات الغاز · الحديد والصلب">Refineries · gas plants · steel</div></div>
+        <div class="sec"><h3 data-ar="البحث العلمي والتعليم">Research &amp; education</h3><p data-ar="مختبرات تعليمية وبحثية مجهزة للكيمياء والأحياء والهندسة.">Teaching and research labs equipped for chemistry, biology and engineering.</p><div class="who" data-ar="الجامعات · الكليات · المدارس">Universities · colleges · schools</div></div>
+        <div class="sec"><h3 data-ar="المختبرات الحكومية">Government laboratories</h3><p data-ar="مختبرات سلامة الغذاء والزراعة والبيئة والصحة العامة المرجعية.">Food safety, agriculture, environment and public health reference labs.</p><div class="who" data-ar="الوزارات · البلديات · المراكز">Ministries · municipalities · centres</div></div>
       </div>
     </div>
   </section>
@@ -362,14 +419,14 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
   <section class="block" id="why">
     <div class="wrap">
       <div class="head">
-        <div><div class="eyebrow">Why IGI</div><h2>A local partner for the whole life of the instrument.</h2></div>
-        <p>Buying the right instrument is only the start. We stay with you through installation, calibration and service.</p>
+        <div><div class="eyebrow" data-ar="لماذا الخليج المبتكرة">Why IGI</div><h2 data-ar="شريك محلي طوال عمر الجهاز.">A local partner for the whole life of the instrument.</h2></div>
+        <p data-ar="شراء الجهاز المناسب هو البداية فقط. نبقى معك في التركيب والمعايرة والصيانة.">Buying the right instrument is only the start. We stay with you through installation, calibration and service.</p>
       </div>
       <div class="why">
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 3h6M10 3v6L4 19a2 2 0 0 0 1.7 3h12.6A2 2 0 0 0 20 19l-6-10V3"/><path d="M7 15h10"/></svg><h3>Right instrument, first time</h3><p>We match the method and standard you test to, so you buy what your lab actually needs.</p></div>
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><h3>Installation &amp; training</h3><p>On-site commissioning and hands-on training for your analysts.</p></div>
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg><h3>Calibration &amp; service</h3><p>Preventive maintenance, spare parts and consumables supplied from Muscat.</p></div>
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg><h3>Tender-ready</h3><p>Compliant technical and commercial offers for government and corporate tenders.</p></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 3h6M10 3v6L4 19a2 2 0 0 0 1.7 3h12.6A2 2 0 0 0 20 19l-6-10V3"/><path d="M7 15h10"/></svg><h3 data-ar="الجهاز المناسب من المرة الأولى">Right instrument, first time</h3><p data-ar="نطابق الطريقة والمعيار الذي تعمل به، لتشتري ما يحتاجه مختبرك فعلاً.">We match the method and standard you test to, so you buy what your lab actually needs.</p></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><h3 data-ar="التركيب والتدريب">Installation &amp; training</h3><p data-ar="تشغيل في الموقع وتدريب عملي لفريق التحليل لديك.">On-site commissioning and hands-on training for your analysts.</p></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg><h3 data-ar="المعايرة والصيانة">Calibration &amp; service</h3><p data-ar="صيانة وقائية وقطع غيار ومستهلكات تُورَّد من مسقط.">Preventive maintenance, spare parts and consumables supplied from Muscat.</p></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg><h3 data-ar="جاهزون للمناقصات">Tender-ready</h3><p data-ar="عروض فنية وتجارية مطابقة لمناقصات الجهات الحكومية والشركات.">Compliant technical and commercial offers for government and corporate tenders.</p></div>
       </div>
     </div>
   </section>
@@ -377,44 +434,42 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
   <section class="band" id="contact">
     <div class="wrap contact">
       <div>
-        <div class="eyebrow">Contact</div>
-        <h2>Tell us what you test. We'll recommend the instrument.</h2>
-        <p class="lead">Send your requirement, specification or tender reference and our team will reply with a technical and commercial offer.</p>
+        <div class="eyebrow" data-ar="اتصل بنا">Contact</div>
+        <h2 data-ar="أخبرنا بما تختبره، وسنرشّح لك الجهاز المناسب.">Tell us what you test. We'll recommend the instrument.</h2>
+        <p class="lead" data-ar="أرسل متطلباتك أو المواصفات أو رقم المناقصة، وسيرد فريقنا بعرض فني وتجاري.">Send your requirement, specification or tender reference and our team will reply with a technical and commercial offer.</p>
         <div class="desk">
-          <div class="row"><div><span>Email</span><strong id="em">Info@igintl.om</strong></div><button class="copy" type="button" data-copy="Info@igintl.om">Copy</button></div>
-          <div class="row"><div><span>GSM / WhatsApp</span><strong>+968 9709 0570</strong></div><button class="copy" type="button" data-copy="+968 97090570">Copy</button></div>
-          <div class="row"><div><span>Office</span><strong>Muscat, Sultanate of Oman</strong></div></div>
+          <div class="row"><div><span data-ar="البريد الإلكتروني">Email</span><strong class="ltr"><a href="mailto:Info@igintl.om">Info@igintl.om</a></strong></div><button class="copy" type="button" data-copy="Info@igintl.om" data-ar="نسخ">Copy</button></div>
+          <div class="row"><div><span data-ar="هاتف / واتساب">GSM / WhatsApp</span><strong class="ltr"><a href="https://wa.me/96897090570" target="_blank" rel="noopener">+968 9709 0570</a></strong></div><button class="copy" type="button" data-copy="+968 97090570" data-ar="نسخ">Copy</button></div>
+          <div class="row"><div><span data-ar="المكتب">Office</span><strong data-ar="مسقط، سلطنة عُمان">Muscat, Sultanate of Oman</strong></div></div>
         </div>
       </div>
 
       <form id="rfq" novalidate>
-        <h3>Request a quotation</h3>
+        <h3 data-ar="طلب عرض سعر">Request a quotation</h3>
         <div class="two">
-          <label for="f-name">Your name<input id="f-name" name="name" required placeholder="e.g. Ahmed Al Balushi"></label>
-          <label for="f-org">Organisation<input id="f-org" name="org" placeholder="Company or ministry"></label>
+          <label for="f-name"><span data-ar="الاسم">Your name</span><input id="f-name" name="name" required placeholder="e.g. Ahmed Al Balushi" data-ar-ph="مثال: أحمد البلوشي"></label>
+          <label for="f-org"><span data-ar="الجهة">Organisation</span><input id="f-org" name="org" placeholder="Company or ministry" data-ar-ph="الشركة أو الوزارة"></label>
         </div>
         <div class="two">
-          <label for="f-phone">Phone<input id="f-phone" name="phone" inputmode="tel" placeholder="+968"></label>
-          <label for="f-sector">Sector
+          <label for="f-phone"><span data-ar="الهاتف">Phone</span><input id="f-phone" name="phone" inputmode="tel" placeholder="+968" dir="ltr"></label>
+          <label for="f-sector"><span data-ar="القطاع">Sector</span>
             <select id="f-sector" name="sector">
-              <option>Water &amp; wastewater</option><option>Food, dairy &amp; milling</option><option>Cement, mining &amp; construction</option><option>Oil, gas &amp; metals</option><option>Research &amp; education</option><option>Government laboratory</option>
+              <option data-ar="المياه ومياه الصرف">Water &amp; wastewater</option><option data-ar="الأغذية والألبان والمطاحن">Food, dairy &amp; milling</option><option data-ar="الإسمنت والتعدين والإنشاءات">Cement, mining &amp; construction</option><option data-ar="النفط والغاز والمعادن">Oil, gas &amp; metals</option><option data-ar="البحث العلمي والتعليم">Research &amp; education</option><option data-ar="مختبر حكومي">Government laboratory</option>
             </select>
           </label>
         </div>
-        <label for="f-need">What do you need?<textarea id="f-need" name="need" required placeholder="e.g. 2 portable pH/conductivity meters with calibration buffers, delivery to Sohar"></textarea></label>
-        <button class="btn primary" type="submit" style="justify-self:start">Prepare my request</button>
-        <div class="out" id="out" hidden>
-          <p class="hint">Your request is ready. Copy it and send it to <strong>Info@igintl.om</strong> or WhatsApp <strong>+968 9709 0570</strong>.</p>
-          <pre id="msg"></pre>
-          <button class="btn" type="button" id="copyMsg">Copy request</button>
+        <label for="f-need"><span data-ar="ما الذي تحتاجه؟">What do you need?</span><textarea id="f-need" name="need" required placeholder="e.g. 2 portable pH/conductivity meters with calibration buffers, delivery to Sohar" data-ar-ph="مثال: جهازان محمولان لقياس الأس الهيدروجيني والتوصيلية مع محاليل المعايرة، التسليم في صحار"></textarea></label>
+        <div class="send">
+          <button class="btn wa" type="submit" data-via="wa" data-ar="أرسل عبر واتساب">Send on WhatsApp</button>
+          <button class="btn primary" type="submit" data-via="mail" data-ar="أرسل بالبريد الإلكتروني">Send by email</button>
         </div>
-        <p class="hint" id="err" hidden style="color:#C0392B;font-size:.88rem">Please add your name and what you need.</p>
+        <p class="err" id="err" hidden data-ar="يرجى إدخال اسمك وما تحتاجه.">Please add your name and what you need.</p>
       </form>
     </div>
     <footer>
       <div class="wrap">
-        <span>© 2026 Innovative Gulf International LLC · Muscat, Sultanate of Oman</span>
-        <span>Scientific &amp; laboratory instrumentation · process monitoring · field testing</span>
+        <span data-ar="© 2026 الخليج المبتكرة الدولية ش.م.م · مسقط، سلطنة عُمان">© 2026 Innovative Gulf International LLC · Muscat, Sultanate of Oman</span>
+        <span data-ar="الأجهزة العلمية والمختبرية · مراقبة العمليات · حلول الفحص الميداني">Scientific &amp; laboratory instrumentation · process monitoring · field testing</span>
       </div>
     </footer>
   </section>
@@ -422,7 +477,37 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
 
 <script>
 (function(){
-  // Meter readout
+  var $=function(id){return document.getElementById(id)};
+
+  /* ---------- Language switch ---------- */
+  var lang="en";
+  function setLang(l){
+    lang=l;
+    document.documentElement.lang=l;
+    document.documentElement.dir=(l==="ar")?"rtl":"ltr";
+    document.querySelectorAll("[data-ar]").forEach(function(el){
+      if(el.dataset.en===undefined) el.dataset.en=el.textContent;
+      el.textContent=(l==="ar")?el.dataset.ar:el.dataset.en;
+    });
+    document.querySelectorAll("[data-ar-html]").forEach(function(el){
+      if(el.dataset.enHtml===undefined) el.dataset.enHtml=el.innerHTML;
+      el.innerHTML=(l==="ar")?el.dataset.arHtml:el.dataset.enHtml;
+    });
+    document.querySelectorAll("[data-ar-ph]").forEach(function(el){
+      if(el.dataset.enPh===undefined) el.dataset.enPh=el.placeholder;
+      el.placeholder=(l==="ar")?el.dataset.arPh:el.dataset.enPh;
+    });
+    $("langBtn").textContent=(l==="ar")?"English":"العربية";
+    document.title=(l==="ar")?"الخليج المبتكرة الدولية":"Innovative Gulf International";
+    try{localStorage.setItem("igi-lang",l)}catch(e){}
+  }
+  $("langBtn").addEventListener("click",function(){setLang(lang==="ar"?"en":"ar")});
+  var start="en";
+  try{start=localStorage.getItem("igi-lang")||start}catch(e){}
+  if(/[?&]lang=ar/.test(location.search)||location.hash==="#ar") start="ar";
+  if(start==="ar") setLang("ar");
+
+  /* ---------- Meter readout ---------- */
   var R=[
     {p:"pH · drinking water",v:[7.02,7.05,6.98,7.01],u:"pH",d:2,t:"25.0 °C",s:"Ref. temp 25 °C"},
     {p:"Conductivity · tap water",v:[412,418,409,415],u:"µS/cm",d:0,t:"25.0 °C",s:"TDS ≈ 270 mg/L"},
@@ -430,7 +515,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
     {p:"Sugar · orange juice",v:[11.8,11.9,11.8,12.0],u:"°Brix",d:1,t:"20.0 °C",s:"Temp. compensated"}
   ];
   var cur=0,i=0,keys=document.querySelectorAll(".keys button");
-  var $=function(id){return document.getElementById(id)};
   function show(k){
     cur=k;var r=R[k];
     $("param").textContent=r.p;$("unit").textContent=r.u;$("temp").textContent=r.t;$("std").textContent=r.s;
@@ -441,7 +525,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
   var still=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
   if(!still){setInterval(function(){i=(i+1)%4;var r=R[cur];$("val").textContent=r.v[i].toFixed(r.d)},1400)}
 
-  // Sector filter
+  /* ---------- Sector filter ---------- */
   var fb=document.querySelectorAll(".filter button"),cards=document.querySelectorAll("#grid .card");
   fb.forEach(function(b){b.addEventListener("click",function(){
     var f=b.dataset.f;
@@ -449,26 +533,34 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
     cards.forEach(function(c){c.hidden=!(f==="all"||c.dataset.s.split(" ").indexOf(f)>-1)});
   })});
 
-  // Copy helpers
-  function copyText(text,btn){
-    var done=function(){var o=btn.textContent;btn.textContent="Copied";setTimeout(function(){btn.textContent=o},1500)};
-    try{navigator.clipboard.writeText(text).then(done,function(){sel(btn)})}catch(e){sel(btn)}
-  }
-  function sel(btn){var el=btn.parentElement.querySelector("strong,pre");if(!el)return;var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent="Press Ctrl+C"}
-  document.querySelectorAll(".copy").forEach(function(b){b.addEventListener("click",function(){copyText(b.dataset.copy,b)})});
+  /* ---------- Copy buttons ---------- */
+  document.querySelectorAll(".copy").forEach(function(b){b.addEventListener("click",function(){
+    var done=function(){var o=b.textContent;b.textContent=(lang==="ar")?"تم النسخ":"Copied";setTimeout(function(){b.textContent=o},1500)};
+    try{navigator.clipboard.writeText(b.dataset.copy).then(done,function(){})}catch(e){}
+  })});
 
-  // RFQ form
+  /* ---------- Quotation form: opens WhatsApp or email with the request filled in ---------- */
+  var via="wa";
+  document.querySelectorAll(".send button").forEach(function(b){b.addEventListener("click",function(){via=b.dataset.via})});
   $("rfq").addEventListener("submit",function(e){
     e.preventDefault();
     var n=$("f-name").value.trim(),need=$("f-need").value.trim();
-    if(!n||!need){$("err").hidden=false;$("out").hidden=true;return}
+    if(!n||!need){$("err").hidden=false;return}
     $("err").hidden=true;
-    $("msg").textContent="Request for quotation – Innovative Gulf International\n\nName: "+n+"\nOrganisation: "+($("f-org").value.trim()||"-")+"\nPhone: "+($("f-phone").value.trim()||"-")+"\nSector: "+$("f-sector").value+"\n\nRequirement:\n"+need;
-    $("out").hidden=false;
+    var ar=(lang==="ar");
+    var msg=(ar?"طلب عرض سعر – الخليج المبتكرة الدولية":"Request for quotation – Innovative Gulf International")+"\n\n"+
+      (ar?"الاسم: ":"Name: ")+n+"\n"+
+      (ar?"الجهة: ":"Organisation: ")+($("f-org").value.trim()||"-")+"\n"+
+      (ar?"الهاتف: ":"Phone: ")+($("f-phone").value.trim()||"-")+"\n"+
+      (ar?"القطاع: ":"Sector: ")+$("f-sector").value+"\n\n"+
+      (ar?"المتطلبات:\n":"Requirement:\n")+need;
+    if(via==="wa"){
+      window.open("https://wa.me/96897090570?text="+encodeURIComponent(msg),"_blank","noopener");
+    }else{
+      location.href="mailto:Info@igintl.om?subject="+encodeURIComponent(ar?"طلب عرض سعر":"Request for quotation")+"&body="+encodeURIComponent(msg);
+    }
   });
-  $("copyMsg").addEventListener("click",function(){copyText($("msg").textContent,this)});
 })();
 </script>
-
 </body>
 </html>
