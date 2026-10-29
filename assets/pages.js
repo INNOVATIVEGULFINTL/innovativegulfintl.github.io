@@ -23,7 +23,7 @@
     function card(a,fam){
       var label=a[1]+(a[0]?" ("+a[0]+")":"")+(a[3]?" – "+a[3]:"");
       var pic=a[4]?'<div class="ph"><img src="/assets/stock/'+esc(a[4])+'" alt="'+esc(a[1])+'" loading="lazy"></div>':'<div class="ph ph-none"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 6h10M21 6v12L10 38a3 3 0 0 0 2.7 4h22.6A3 3 0 0 0 38 38L27 18V6"/><path d="M15 30h18"/></svg></div>';
-      return '<article class="it" data-fam="'+fam+'">'+pic+'<div class="b"><div class="top"><span class="code">'+esc(a[0]||"")+'</span><span class="br">'+esc(a[3])+'</span></div><h3>'+esc(a[1])+'</h3>'+(a[2]?'<p class="d">'+esc(a[2])+'</p>':'')+'<span class="chip">In stock in Muscat</span></div><button class="btn q" type="button" data-q="'+esc(label)+'">Request a quote</button></article>';
+      return '<article class="it" data-fam="'+fam+'">'+pic+'<div class="b"><div class="top"><span class="code">'+esc(a[0]||"")+'</span><span class="br">'+esc(a[3])+'</span></div><h3>'+esc(a[1])+'</h3>'+(a[2]?'<p class="d">'+esc(a[2])+'</p>':'')+'<span class="chip">In stock</span></div><button class="btn q" type="button" data-q="'+esc(label)+'">Request a quote</button></article>';
     }
     function pick(id,scroll){
       tiles.forEach(function(t){t.setAttribute("aria-pressed",String(t.getAttribute("data-fam")===id))});
@@ -32,7 +32,7 @@
         var t=document.querySelector('.sol[data-fam="'+id+'"]'),nm=t.querySelector(".sl").firstChild.textContent;
         var n=grid.querySelectorAll('.it[data-fam="'+id+'"]:not(.rng)').length,mb=grid.querySelector('.more-f[data-fam="'+id+'"]');
         if(mb)n+=+mb.getAttribute("data-more");
-        title.textContent=nm;sub.textContent=n?n+" in stock in Muscat":"Supplied to order – ask us for models and prices";ctl.hidden=false;
+        title.textContent=nm;sub.textContent=n?n+" in stock":"Supplied to order – ask us for models and prices";ctl.hidden=false;
         try{history.replaceState(null,"","#f-"+id)}catch(e){}
       }else{title.textContent=title.getAttribute("data-all");sub.textContent=sub.getAttribute("data-all");ctl.hidden=true;try{history.replaceState(null,"",location.pathname)}catch(e){}}
       if(scroll)$("stock").scrollIntoView({behavior:"smooth",block:"start"});
